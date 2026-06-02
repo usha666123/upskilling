@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #welcomeBanner{
+        background-color:blue;
+        color:white;
+        text-align:center;
+    }
+    .highlight {
+            background-color: yellow;
+            font-weight: bold;
+            padding: 3px;
+        }
+        body{
+    background-color: rgb(210, 206, 202);
+    align-items: center;
+    text-align: center;
+}
+
+nav{
+    padding:15px;
+    background-color: black;
+    text-align: center;
+}
+nav a{
+    margin:5px auto;
+    padding: 15px;
+    color:white;
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+
+}
+nav>a:hover{
+    color:yellow;
+}
+.eventForm{
+   align-items: center;
+   background-color: whitesmoke;
+   width:fit-content;
+   text-align: center;
+   margin:auto;
+   padding:5px;
+   border:1px solid #ccc;
+   border-radius: 15px;
+}
+        </style>
+</head>
+<body>
+    <!-- main -->
+     <!-- header -->
+      <header>
+           <h1>Local community event portal</h1>
+      </header>
+     <!-- navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+    <a href="help.html" target="_blank"></a>
+    </nav>
+  <main>
+    <section id="home">
+  <div id="welcomeBanner">
+    <h2>welcome!</h2>
+    <p>Enjoy our
+    <span style="color:red; font-weight:bold;">special offers</span>
+</p>
+</div>
+<p class="classex">
+    Register today to participate in community events
+</p>  
+    </section>
+
+    <section id="events">
+         <h2>Community Event Gallery</h2>
+
+            <table border="1">
+                <tr>
+                    <td>
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.R2CeTSUHBNRXJyFn38P2MgHaDt?rs=1&pid=ImgDetMain&o=7&rm=3/200"
+                             alt="Music Event"
+                             title="Music Festival"
+                             class="gallery-img"
+                             ondblclick="enlargeImage(this)">
+                        <p>Music Festival</p>
+                    </td>
+
+                    <td>
+                        <img src="https://th.bing.com/th/id/OIP.PNs_KzAm0a8Se75_dNPavgHaDS?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3/200"
+                             alt="Sports Event"
+                             title="Sports Day"
+                             class="gallery-img"
+                             ondblclick="enlargeImage(this)">
+                        <p>Sports Day</p>
+                    </td>
+
+                    <td>
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/035/945/730/small_2x/ai-generated-capture-the-excitement-of-carnival-cuisine-free-photo.jpg/200"
+                             alt="Food Event"
+                             title="Food Carnival"
+                             class="gallery-img"
+                             ondblclick="enlargeImage(this)">
+                        <p>Food Carnival</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.NbSX1brZAB2KEnyOrcd7xgHaEu?rs=1&pid=ImgDetMain&o=7&rm=3/200"
+                             alt="Dance Event"
+                             title="Dance Show"
+                             class="gallery-img"
+                             ondblclick="enlargeImage(this)">
+                        <p>Dance Show</p>
+                    </td>
+
+                    <td>
+                        <img src="https://tse4.mm.bing.net/th/id/OIP.TLOjf8eoxcX_gMY8AlRAAwHaFj?rs=1&pid=ImgDetMain&o=7&rm=3/200"
+                             alt="Art Event"
+                             title="Art Exhibition"
+                             class="gallery-img"
+                             ondblclick="enlargeImage(this)">
+                        <p>Art Exhibition</p>
+                    </td>
+
+                    <td>
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.DUlumNz8xlGDmF2Qn2PuiQHaE7?rs=1&pid=ImgDetMain&o=7&rm=3/200"
+                             alt="Community Meeting"
+                             title="Community Meeting"
+                             class="gallery-img"
+                             ondblclick="enlargeImage(this)">
+                        <p>Community Meeting</p>
+                    </td>
+                </tr>
+            </table>
+    </section>
+
+    <section id="contact">
+         <h2>Event Registration Form</h2>
+
+            <form id="eventForm">
+
+                <label>Name:</label>
+                <br>
+                <input type="text" placeholder="Enter your name"
+                       required autofocus>
+                <br>
+                <label>Email:</label>
+                <br>
+                <input type="email" placeholder="Enter your email"
+                       required>
+                <br>
+                <label>Phone:</label>
+                <br>
+                <input type="text" id="phone"
+                       onblur="validatePhone()"
+                       placeholder="Enter 10-digit phone number">
+                <br>
+                <label>Select Date:</label>
+                <br>
+                <input type="date" required>
+                <br><br>
+                <label>Event Type:</label>
+                <select id="eventType" onchange="showFee()">
+                    <option value="">--Select Event--</option>
+                    <option value="Music">Music Event</option>
+                    <option value="Sports">Sports Event</option>
+                    <option value="Food">Food Festival</option>
+                </select>
+
+                <p id="feeDisplay"></p>
+
+                <label>Message:</label>
+                <textarea id="feedback"
+                          placeholder="Enter feedback"
+                          onkeyup="countChars()"></textarea>
+
+                <p>Character Count: <span id="charCount">0</span></p>
+
+                <button type="submit" onclick="showConfirmation()">
+                    Register
+                </button>
+
+                <output id="outputMessage"></output>
+            </form>
+    </section>
+
+        <!-- Video Section -->
+        <section>
+            <h2>Event Promo Video</h2>
+
+            <video width="400" controls oncanplay="videoReady()">
+                <source src="sample.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+
+            <p id="videoMessage"></p>
+        </section>
+          <!-- Geolocation -->
+        <section>
+            <h2>Find Nearby Events</h2>
+
+            <button onclick="findLocation()">
+                Find Nearby Events
+            </button>
+
+            <p id="locationResult"></p>
+        </section>
+
+        <!-- Storage -->
+        <section>
+            <h2>User Preferences</h2>
+
+            <button onclick="clearPreferences()">
+                Clear Preferences
+            </button>
+        </section>
+
+</main>
+    <!-- footer -->
+     <footer>
+<p>@2026 local community event portal</p>
+     </footer>
+</body>
+</html>

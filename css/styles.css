@@ -1,0 +1,90 @@
+/* body styles */
+body{
+    align-items: center;
+}
+
+h2{
+    color:green;
+    font-style: italic;
+    font-size: large;
+}
+ #MainHeader{
+        background-color:blue;
+        color:white;
+        text-align:center;
+    }
+    .highlight {
+            background-color: yellow;
+            font-weight: bold;
+            padding: 3px;
+        }
+        body{
+    background-color: rgb(210, 206, 202);
+    align-items: center;
+    text-align: center;
+}
+
+nav{
+    padding:15px;
+    background-color: black;
+    text-align: center;
+}
+nav a{
+    margin:5px auto;
+    padding: 15px;
+    color:white;
+    text-decoration: none;
+    font-size: 15hex;
+    text-align: center;
+
+}
+nav>a:hover{
+    color:yellow;
+}
+.eventForm{
+   align-items: center;
+   background-color: whitesmoke;
+   width:fit-content;
+   text-align: center;
+   margin:auto;
+   padding:5px;
+   border:1px solid #ccc;
+   border-radius: 15px;
+}
+
+*{
+    margin:10px;
+
+}
+.eventCard{
+    background-color: whitesmoke;
+    displat:flex;
+    justify-content: flex-start;
+}
+h3,p{
+    color:rgba(0, 0, 0, 0);
+}
+table{
+    background-color: beige;
+    text-align:center;
+    border-collapse:collapse;
+}
+tr:nth-child(even){
+    background-color:black;
+    color:white;
+}
+article{
+    column-count: 2; 
+column-gap: 30px; 
+column-rule: 1px solid gray; 
+}
+@media(max-width:768px){
+*{
+    font-size: 10px;
+    
+}
+nav{
+    display:flex;
+    flex-direction:column;
+}
+}
